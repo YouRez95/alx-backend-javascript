@@ -6,7 +6,7 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
   return Promise.allSettled(promises).then((results) => {
     const array = [];
     results.forEach((result) => {
-      array.push({ status: result.status, value: result.value || result.reason });
+      array.push(result);
     });
     return array;
   });
