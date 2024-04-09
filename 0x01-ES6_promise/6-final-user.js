@@ -8,7 +8,6 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     results.forEach((result) => {
       array.push({ status: result.status, value: result.value || result.reason });
     });
-    console.log(array);
     return array;
   });
 }
