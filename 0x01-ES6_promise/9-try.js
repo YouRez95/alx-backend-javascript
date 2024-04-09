@@ -4,7 +4,7 @@ export default function guardrail(mathFunction) {
     const result = mathFunction();
     array.push(result);
   } catch (err) {
-    array.push(err.message);
+    array.push(`Error: ${err.message}`);
   }
 
   array.push('Guardrail was processed');
