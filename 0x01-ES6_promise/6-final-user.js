@@ -6,8 +6,12 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
   const array = [];
   return Promise.allSettled(promises).then((results) => {
     results.forEach((result) => {
-      array.push(result);
+      if (result.status === 'rejected') {
+        array.push({ status: result.status, value: String(result.reason) })
+      } else {
+        array.push(result)
+      }
     });
     return array;
-  }).catch(() => console.log('err'));
+  });
 }
