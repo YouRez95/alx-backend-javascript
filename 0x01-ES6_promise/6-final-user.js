@@ -8,7 +8,6 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
     results.forEach((result) => {
       array.push(result);
     });
-    console.log(array);
     return array;
   }).catch(() => console.log('err'));
 }
