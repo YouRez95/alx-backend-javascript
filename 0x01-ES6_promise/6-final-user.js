@@ -7,9 +7,9 @@ export default async function handleProfileSignup(firstName, lastName, fileName)
   return Promise.allSettled(promises).then((results) => {
     results.forEach((result) => {
       if (result.status === 'rejected') {
-        array.push({ status: result.status, value: String(result.reason) })
+        array.push({ status: result.status, value: String(result.reason) });
       } else {
-        array.push(result)
+        array.push(result);
       }
     });
     return array;
