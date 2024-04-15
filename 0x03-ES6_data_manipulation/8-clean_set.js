@@ -5,7 +5,10 @@ export default function cleanSet(set, startString) {
   }
   set.forEach((value) => {
     if (typeof value === 'string' && value.startsWith(startString)) {
-      text.push(value.slice(startString.length));
+      const portion = value.slice(startString.length);
+      if (portion) {
+        text.push(portion);
+      }
     }
   });
   return text.join('-');
