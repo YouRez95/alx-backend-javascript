@@ -16,7 +16,7 @@ const student2: Student = {
   firstName: "Mario",
   lastName: "Freen",
   age: 29,
-  location: "France"
+  location: "France",
 };
 
 const studentsList: Student[] = [student1, student2];
@@ -35,4 +35,4 @@ studentsList.forEach((student) => {
   row.appendChild(cellName);
   row.appendChild(cellLocation);
   table.appendChild(row);
-})
+});
