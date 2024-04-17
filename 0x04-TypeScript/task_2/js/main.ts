@@ -69,5 +69,4 @@ function teachClass(todayClass: Subjects) {
   if (todayClass === "History") {
     return "Teaching History";
   }
-
 }
