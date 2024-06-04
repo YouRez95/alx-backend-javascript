@@ -15,7 +15,7 @@ const app = http.createServer((req, res) => {
     const responses = [];
     fs.readFile(path, 'utf-8', (err, data) => {
       if (err) {
-        res.end('Cannot load the database');
+        console.log('Cannot load the database')
         throw new Error(err);
       }
       const fields = {};
