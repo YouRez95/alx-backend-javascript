@@ -17,7 +17,6 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['jest'],
-  extends: "eslint:recommended",
   rules: {
     'max-classes-per-file': 'off',
     'no-underscore-dangle': 'off',
