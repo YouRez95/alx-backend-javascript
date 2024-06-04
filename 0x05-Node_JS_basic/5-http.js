@@ -26,7 +26,7 @@ function countStudents(path) {
         }
       }
 
-      const responses = [`Number of students: ${students.length}`];
+      const responses = ['This is the list of our students', `Number of students: ${students.length}`];
       for (const [key, value] of Object.entries(fields)) {
         responses.push(`Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`);
       }
