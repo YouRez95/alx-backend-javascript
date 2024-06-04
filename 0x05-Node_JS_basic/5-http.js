@@ -44,7 +44,7 @@ const app = http.createServer((req, res) => {
     countStudents(path).then((response) => {
       res.end(response.join('\n'));
     }).catch((err) => {
-      res.end(['This is the list of our students', err.message].join('\n'));
+      res.end(['This is the list of our students', err.toString()].join('\n'));
     });
   }
 });
