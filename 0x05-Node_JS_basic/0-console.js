@@ -1,5 +1,9 @@
+/**
+ * Display message on STDOUT
+ */
+
 function displayMessage(message){
-  console.log(message)
+  console.log(message);
 }
 
-module.exports = displayMessage
+module.exports = displayMessage;
