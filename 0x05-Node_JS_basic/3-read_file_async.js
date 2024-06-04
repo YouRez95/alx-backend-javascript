@@ -8,8 +8,8 @@ function countStudents(path) {
   return new Promise((resolve, reject) => {
     fs.readFile(path, 'utf-8', (err, data) => {
       if (err) {
-        console.log('Error: Cannot load the database');
-        reject(err);
+        console.log('Cannot load the database');
+        return reject(err);
       }
       const fields = {};
       const students = data.trim().split('\n').slice(1);
@@ -27,7 +27,7 @@ function countStudents(path) {
       for (const [key, value] of Object.entries(fields)) {
         console.log(`Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`);
       }
-      resolve();
+      return resolve();
     });
   });
 }
