@@ -7,17 +7,7 @@ class StudentsController {
     readDatabase(path).then((data) => {
       const responses = ['This is the list of our students'];
 
-      const compareFonction = (a, b) => {
-        if (a[0].toLowerCase() < b[0].toLowerCase()) {
-          return -1;
-        }
-        if (a[0].toLowerCase() > b[0].toLowerCase()) {
-          return 1;
-        }
-        return 0;
-      };
-
-      for (const [key, value] of Object.entries(data).sort(compareFonction)) {
+      for (const [key, value] of Object.entries(data)) {
         responses.push(`Number of students in ${key}: ${value.length}. List: ${value.join(', ')}`);
       }
       return response.status(200).send(responses.join('\n'));
