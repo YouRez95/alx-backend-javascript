@@ -4,8 +4,10 @@
 
 const http = require('http');
 
-const proxy = http.createServer((req, res) => {
+const app = http.createServer((req, res) => {
   res.end('Hello Holberton School!');
 });
 
-proxy.listen(1245);
+app.listen(1245);
+
+module.exports = app;
