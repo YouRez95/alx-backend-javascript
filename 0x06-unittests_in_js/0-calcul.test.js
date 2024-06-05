@@ -1,5 +1,5 @@
 const assert = require('assert');
-const calculateNumber = require("./0-calcul.js");
+const calculateNumber = require('./0-calcul');
 
 describe('calculateNumber', function () {
 
@@ -17,5 +17,9 @@ describe('calculateNumber', function () {
 
   it('should return 6', function () {
     assert.strictEqual(calculateNumber(1.5, 3.7), 6);
+  });
+
+  it('should return 5', function () {
+    assert.strictEqual(calculateNumber(2.49999, 3.499999), 5);
   });
 });
