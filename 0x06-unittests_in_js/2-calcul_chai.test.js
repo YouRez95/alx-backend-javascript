@@ -3,42 +3,41 @@ const { describe } = require('mocha');
 const calculateNumber = require('./1-calcul');
 
 describe('calculateNumber', function () {
-
   describe('type == "SUM"', () => {
-    it('should return 12', function () {
-      expect(calculateNumber('SUM', 10.0, 2.0)).to.equal(12)
-    });
-  
-    it('should return 13', function () {
-      expect(calculateNumber('SUM', 10.7, 2.4)).to.equal(13);
-    });
-  
-    it('should return 11', function () {
-      expect(calculateNumber('SUM', 7.5, 2.9)).to.equal(11);
+    it('positive numbers', () => {
+      expect(calculateNumber('SUM', 3.0, 3.0)).to.equal(6);
     });
 
-    it('should return 14', function () {
-      expect(calculateNumber('SUM', 10.7, 2.7)).to.equal(14)
+    it('round second number', () => {
+      expect(calculateNumber('SUM', 6.3, 1.7)).to.equal(8);
     });
 
-    it('should return -14', function () {
-      expect(calculateNumber('SUM', -10.7, -2.7)).to.equal(-14)
+    it('round first number', () => {
+      expect(calculateNumber('SUM', 2.7, 1.3)).to.equal(4);
     });
 
-    it('should return 8', function () {
-      expect(calculateNumber('SUM', 10.7, -2.7)).to.equal(8)
+    it('negative numbers', () => {
+      expect(calculateNumber('SUM', -3.0, -3.0)).to.equal(-6);
     });
 
-    it('should return 0', function () {
-      expect(calculateNumber('SUM', 0.0, 0.0)).to.equal(0)
+    it('negative numbers with round first number', () => {
+      expect(calculateNumber('SUM', -2.7, -1.2)).to.equal(-4);
     });
 
-    it('should return -14', function () {
-      expect(calculateNumber('SUM', -10.7, -2.7)).to.equal(-14)
+    it('negative numbers with round second number', () => {
+      expect(calculateNumber('SUM', -2.4, -1.7)).to.equal(-4);
     });
-  
-    it('should return 9', function () {
-      expect(calculateNumber('SUM', 7.4999, 2.49999)).to.equal(9);
+
+    it('negative and positive numbers', () => {
+      expect(calculateNumber('SUM', -3.0, 3.0)).to.equal(0);
+    });
+
+    it('positive and negative numbers', () => {
+      expect(calculateNumber('SUM', 3.0, -3.0)).to.equal(0);
+    });
+
+    it('zero', () => {
+      expect(calculateNumber('SUM', 0.0, 0.0)).to.equal(0);
     });
   })
 
