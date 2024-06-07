@@ -4,7 +4,7 @@ const calculateNumber = require('./1-calcul');
 
 describe('calculateNumber', function () {
 
-  describe('SUM', function () {
+  describe('type=SUM', function () {
     it('should return 12', function () {
       expect(calculateNumber('SUM', 10.0, 2.0)).to.equal(12)
     });
