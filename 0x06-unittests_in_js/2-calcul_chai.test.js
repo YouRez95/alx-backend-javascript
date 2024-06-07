@@ -119,11 +119,11 @@ describe('calculateNumber', () => {
       expect(calculateNumber('DIVIDE', -5.0, 0)).to.equal('Error');
     });
 
-    it('negative number and number rounded down to zero', () => {
+    it('negative number', () => {
       expect(calculateNumber('DIVIDE', -5.0, 0.2)).to.equal('Error');
     });
 
-    it('negative number and number rounded up to zero', () => {
+    it('negative number', () => {
       expect(calculateNumber('DIVIDE', -5.0, -0.2)).to.equal('Error');
     });
 
