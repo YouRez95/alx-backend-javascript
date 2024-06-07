@@ -20,6 +20,10 @@ describe('calculateNumber', function () {
     it('should return 14', function () {
       expect(calculateNumber('SUM', 10.7, 2.7)).to.equal(14)
     });
+
+    it('should return -14', function () {
+      expect(calculateNumber('SUM', -10.7, -2.7)).to.equal(-14)
+    });
   
     it('should return 9', function () {
       expect(calculateNumber('SUM', 7.4999, 2.49999)).to.equal(9);
