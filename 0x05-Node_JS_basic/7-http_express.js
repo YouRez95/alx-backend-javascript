@@ -38,7 +38,7 @@ app.get('/students', (req, res) => {
   countStudents(path).then((text) => {
     res.send(text.join('\n'));
   }).catch((err) => {
-    res.send(['This is the list of our student', err.toString()].join('\n'));
+    res.send(['This is the list of our student', err.message.toString()].join('\n'));
   });
 });
 
